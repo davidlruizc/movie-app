@@ -10,7 +10,7 @@ class RemoteDatasource extends IRemoteDatasource {
   @override
   Future<Either<ErrorResponse, dynamic>> callGET(String endpoint) async {
     try {
-      var token = ApiToken.getToken;
+      var token = Api.getToken;
       final response = await dio.get(endpoint,
           options: Options(headers: {
             "Authorization": "Bearer $token",
